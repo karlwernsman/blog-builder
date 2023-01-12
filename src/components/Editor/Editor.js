@@ -43,17 +43,17 @@ export default function Editor({ setTitle, setSubtitle, setText, setFont, setAli
       </div>
       <div className="form-control">
         <label>Alignment</label>
-        <div className="radio-group">
+        <div className="radio-group" onChange={handleAlignment}>
           <label>
-            <input name="align" type="radio" value="left" onChange={handleAlignment} />
+            <input name="align" type="radio" value="left" />
             <i className="ri-align-left"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="center" onChange={handleAlignment} />
+            <input name="align" type="radio" value="center" />
             <i className="ri-align-center"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="right" onChange={handleAlignment} />
+            <input name="align" type="radio" value="right" />
             <i className="ri-align-right"></i>
           </label>
         </div>

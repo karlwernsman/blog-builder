@@ -15,7 +15,10 @@ export default function Preview({ title, subtitle, text, font, alignment }) {
   // </div>
 
   return (
-    <div className="preview" style={{ fontFamily: `${font}`, textAlign: `${alignment}` }}>
+    <div
+      className={`preview, ${font}`}
+      style={{ fontFamily: `${font}`, textAlign: `${alignment}` }}
+    >
       <h1>{title}</h1>
       <h3>{subtitle}</h3>
       <p>{text}</p>
