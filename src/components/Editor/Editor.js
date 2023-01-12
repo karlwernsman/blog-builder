@@ -2,19 +2,34 @@ import React from 'react';
 
 import './Editor.css';
 
-export default function Editor() {
+export default function Editor({ setTitle, setSubtitle, setText, setFont, setAlignment }) {
+  const handleTitle = (event) => {
+    setTitle(event.target.value);
+  };
+  const handleSubtitle = (event) => {
+    setSubtitle(event.target.value);
+  };
+  const handleText = (event) => {
+    setText(event.target.value);
+  };
+  const handleFont = (event) => {
+    setFont(event.target.value);
+  };
+  const handleAlignment = (event) => {
+    setAlignment(event.target.value);
+  };
   return (
     <div className="editor">
       <div className="form-control">
-        <input name="title" type="text" />
+        <input name="title" type="text" onChange={handleTitle} />
         <label htmlFor="title">Title</label>
       </div>
       <div className="form-control">
-        <input type="text" />
+        <input type="text" onChange={handleSubtitle} />
         <label>Subtitle</label>
       </div>
       <div className="form-control">
-        <select>
+        <select onChange={handleFont}>
           <option value="architect">{"Architect's Daughter"}</option>
           <option value="comforter">Comforter</option>
           <option value="fredoka">Fredoka</option>
@@ -28,7 +43,7 @@ export default function Editor() {
       </div>
       <div className="form-control">
         <label>Alignment</label>
-        <div className="radio-group">
+        <div className="radio-group" onChange={handleAlignment}>
           <label>
             <input name="align" type="radio" value="left" />
             <i className="ri-align-left"></i>
@@ -44,7 +59,7 @@ export default function Editor() {
         </div>
       </div>
       <div className="form-control">
-        <textarea style={{ height: '250px' }} />
+        <textarea style={{ height: '250px' }} onChange={handleText} />
         <label>Text</label>
       </div>
     </div>
